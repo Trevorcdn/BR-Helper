@@ -11,3 +11,8 @@ Simple google chrome extension to extract the list of animes you picked up in th
 # Usage
 After the looting phased concluded, click on the extension and hit start. A popup should appear claiming it had copy the list onto the clipboard. 
 You are free to paste your list onto a notepad.
+
+
+# ToDo
+~Alphabet sort the list
+~Make the list have unique entries
