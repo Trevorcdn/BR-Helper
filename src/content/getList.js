@@ -3,18 +3,17 @@
 		var mySet = new Set();//Make List Unique
 		var aniList = [];//Add unique titles to sort
 		var itr = 0;
-		while(document.getElementById('brCollectedList').childNodes.item(i).textContent){
-			var currentText = document.getElementById('brCollectedList').childNodes.item(i).textContent;
+		while (document.getElementById('brCollectedList').childNodes.item(itr).textContent){
+			var currentText = document.getElementById('brCollectedList').childNodes.item(itr).textContent;
 			if (!mySet.has(currentText)){
 				mySet.add(currentText);
 				aniList.push(currentText);
 			}
 			itr++;
 		}
-
 		aniList.sort();
 		for (itr = 0; itr < aniList.length; itr++) {
-			texts = texts.concat(aniList[i] + "\n");
+			texts = texts.concat(aniList[itr] + "\n");
 		}
 
 		copyToClipboard(texts);
