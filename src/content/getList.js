@@ -1,13 +1,24 @@
     (function() {
-		alert("Copied list to clipboard!")
 		var texts = "";
-		var i = 0;
+		var mySet = new Set();//Make List Unique
+		var aniList = [];//Add unique titles to sort
+		var itr = 0;
 		while(document.getElementById('brCollectedList').childNodes.item(i).textContent){
 			var currentText = document.getElementById('brCollectedList').childNodes.item(i).textContent;
-			texts = texts.concat(currentText + "\n");
-			i++;
+			if (!mySet.has(currentText)){
+				mySet.add(currentText);
+				aniList.push(currentText);
+			}
+			itr++;
 		}
+
+		aniList.sort();
+		for (itr = 0; itr < aniList.length; itr++) {
+			texts = texts.concat(aniList[i] + "\n");
+		}
+
 		copyToClipboard(texts);
+		alert("Copied list to clipboard!")
 	})();
 
 	function copyToClipboard(text) {
