@@ -14,5 +14,6 @@ You are free to paste your list onto a notepad.
 
 
 # ToDo
-~Alphabet sort the list
-~Make the list have unique entries
+~Alphabet sort the list**
+~Make the list have unique entries**
+~When copied there are unwanted newlines at the beginning of the list. Find a way to remove them.
