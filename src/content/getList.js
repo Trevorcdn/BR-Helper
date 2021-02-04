@@ -1,22 +1,19 @@
     (function() {
-		var texts = "";
 		var mySet = new Set();//Make List Unique
 		var aniList = [];//Add unique titles to sort
 		var itr = 0;
 		while (document.getElementById('brCollectedList').childNodes.item(itr).textContent){
-			var currentText = document.getElementById('brCollectedList').childNodes.item(itr).textContent;
-			if (!mySet.has(currentText)){
-				mySet.add(currentText);
-				aniList.push(currentText);
+			var currentAnime = document.getElementById('brCollectedList').childNodes.item(itr).textContent;
+			//Each anime has a delimiter of 'x' before the title
+			//Needs the regex to take only entries with the delimiter as there can be empty strings
+			if (currentAnime.match(/^×/i) && !mySet.has(currentAnime)){
+				mySet.add(currentAnime);
+				aniList.push(currentAnime);
 			}
 			itr++;
 		}
 		aniList.sort();
-		for (itr = 0; itr < aniList.length; itr++) {
-			texts = texts.concat(aniList[itr] + "\n");
-		}
-
-		copyToClipboard(texts);
+		copyToClipboard(aniList.join("\n"));
 		alert("Copied list to clipboard!")
 	})();
 
